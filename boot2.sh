@@ -5,10 +5,11 @@ bash install.sh
 nvm install 11.10.0
 node -e "console.log('Running Node.js ' + process.version)"
 npm i -g express-generator
-cd /amos
-#export PATH=$PATH:/amos/node_modules/.bin
+cd /amos_code
+#export PATH=$PATH:/amos_code/node_modules/.bin
 #express
-git clone https://github.com/russney/amos_code.git
+cd ..; git clone https://github.com/russney/amos_code.git
+cd /amos_code
 npm i
 npm start
 # open port 3000 in AWS security group
