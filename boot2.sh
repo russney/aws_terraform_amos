@@ -7,7 +7,8 @@ node -e "console.log('Running Node.js ' + process.version)"
 npm i -g express-generator
 cd /amos
 #export PATH=$PATH:/amos/node_modules/.bin
-express
+#express
+git clone https://github.com/russney/amos_code.git
 npm i
 npm start
 # open port 3000 in AWS security group
