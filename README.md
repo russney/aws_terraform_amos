@@ -18,6 +18,10 @@ with instructions for setting up keys, security groups, and permissions in AWS
 * Make the permissions read only by your user locally:  
 * "chmod 600 amos_kp.pem"
 
+#create security group that only your PC has access to
+* go to EC2 and select Security groups from left pane - create amos_sg
+* click edit - and add ports 22, 3000 for 'My IP'
+
 #create .tf file, and put access and secret key in there
 * framework should look like the amos.tf file
 
@@ -31,6 +35,17 @@ with instructions for setting up keys, security groups, and permissions in AWS
 #connect to your instance  
 * ssh -i amos_kp.pem <IP> -l ec2-user  
 * exit  
+
+#download server software layer
+* sudo su - 
+* yum install git
+* git clone https://github.com/russney/aws_terraform_amos.git
+
+#create unprivleged user 'amos_user'
+* bash boot.sh
+
+#install node, clone codebase, and run node server
+* bash boot2.sh
 
 #remove your instances to stop spending money/time  
 * terraform destroy
