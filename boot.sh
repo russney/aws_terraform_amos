@@ -1,7 +1,9 @@
 #sudo su -
-useradd -u 2000 amos_user
-mkdir /amos_code
-chown amos_user /amos_code
-cp boot2.sh ~amos_user
-chown amos_user ~amos_user/boot2.sh
-su - amos_user
+yum install httpd
+wget http://mysql.mirrors.pair.com/Downloads/MySQL-5.7/mysql-5.7.25.tar.gz
+useradd -u 2000 xcart_user
+mkdir /x
+chown xcart_user /x
+cp boot2.sh ~xcart_user
+chown xcart_user ~xcart_user/boot2.sh
+su - xcart_user
